@@ -16,12 +16,13 @@ const tableConfig = [
   {
     label: "Current Ratio",
     render: (company: CompanyKeyMetrics) => company.currentRatioTTM,
-     subTitle: "Measures the companies ability to pay short term debt obligations",
+    subTitle:
+      "Measures the companies ability to pay short term debt obligations",
   },
   {
     label: "Return On Equity",
     render: (company: CompanyKeyMetrics) => company.roeTTM,
-     subTitle:
+    subTitle:
       "Return on equity is the measure of a company's net income divided by its shareholder's equity",
   },
   {
@@ -30,10 +31,16 @@ const tableConfig = [
     subTitle:
       "Return on assets is the measure of how effective a company is using its assets",
   },
+  {
+    label: "Free Cashflow Per Share",
+    render: (company: CompanyKeyMetrics) => company.freeCashFlowPerShareTTM,
+    subTitle:
+      "Return on assets is the measure of how effective a company is using its assets",
+  },
 ];
 
 const CompanyProfile = (props: Props) => {
-    const ticker = useOutletContext<string>();
+  const ticker = useOutletContext<string>();
   const [companyData, setCompanyData] = useState<CompanyKeyMetrics>();
   useEffect(() => {
     const getCompanyKeyRatios = async () => {
