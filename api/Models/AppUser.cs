@@ -1,8 +1,13 @@
-﻿using System;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+using Microsoft.AspNetCore.Identity;
 
-public class Class1
+namespace api.Models
 {
-	public Class1()
-	{
-	}
+    public class AppUser : IdentityUser
+    {
+        public List<Portfolio> Portfolios { get; set; } = new List<Portfolio>();
+    }
 }

@@ -1,8 +1,13 @@
-﻿using System;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+using api.Models;
 
-public class Class1
+namespace api.Interfaces
 {
-	public Class1()
-	{
-	}
+    public interface IFMPService
+    {
+        Task<Stock> FindStockBySymbolAsync(string symbol);
+    }
 }

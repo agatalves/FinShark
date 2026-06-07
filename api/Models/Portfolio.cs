@@ -1,8 +1,17 @@
-﻿using System;
+using System;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
+using System.Linq;
+using System.Threading.Tasks;
 
-public class Class1
+namespace api.Models
 {
-	public Class1()
-	{
-	}
+    [Table("Portfolios")]
+    public class Portfolio
+    {
+        public string AppUserId { get; set; }
+        public int StockId { get; set; }
+        public AppUser AppUser { get; set; }
+        public Stock Stock { get; set; }
+    }
 }
